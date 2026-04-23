@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday 💖</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+/* PAGE 1 */
+#page1 {
+  height: 100vh;
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 3em;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px pink; }
+  to { text-shadow: 0 0 30px hotpink; }
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 25px;
+  background: hotpink;
+  color: white;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+/* PAGE 2 */
+#page2 {
+  display: none;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffc0cb, #ffe4e1);
+  padding: 20px;
+}
+
+/* Sunflower emojis floating */
+.sunflower {
+  position: fixed;
+  font-size: 24px;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(100vh); }
+  100% { transform: translateY(-10vh); }
+}
+
+/* COLLAGE */
+.collage {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  max-width: 350px;
+  margin: auto;
+}
+
+.collage img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* MESSAGE */
+.message {
+  margin-top: 25px;
+  font-size: 17px;
+  padding: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div id="page1">
+  <h1>🎂 Happy Birthday Bandariyaa 🐒💖</h1>
+  <button onclick="nextPage()">Next 🎁</button>
+</div>
+
+<!-- PAGE 2 -->
+<div id="page2">
+
+  <div class="collage">
+    <img src="photo1.jpg">
+    <img src="photo2.jpg">
+    <img src="photo3.jpg">
+    <img src="photo4.jpg">
+    <img src="photo5.jpg">
+    <img src="photo6.jpg">
+    <img src="photo7.jpg">
+    <img src="photo8.jpg">
+  </div>
+
+  <div class="message">
+    Happy Birthday Riyahhh 💖🌻  
+    Sach bolu toh tu meri life ka ek aisa part hai jisko main kabhi lose nahi karna chahta.  
+    Tu sirf meri best friend nahi hai, tu meri habit hai, meri comfort hai.  
+    Jab bhi main low hota hoon, tu bina kuch kiye sab theek kar deti hai.  
+
+    Mujhe pata hai main har baar perfect nahi hota, par ek cheez pakki hai —  
+    main hamesha tere saath hoon, chahe kuch bhi ho.  
+
+    Tu jitni cute hai na utni hi strong bhi hai, aur honestly…  
+    tu deserve karti hai sabse best cheezein life me.  
+
+    Aaj ka din bas tere liye hai — smile kar, enjoy kar,  
+    aur yaad rakh… tu mere liye bohot important hai 💫  
+
+    Happy Birthday once again meri bandariyaa 🐒💖🌻
+  </div>
+
+</div>
+
+<!-- MUSIC -->
+<audio id="song" src="song.mp3"></audio>
+
+<script>
+// next page + music
+function nextPage() {
+  document.getElementById("page1").style.display = "none";
+  document.getElementById("page2").style.display = "block";
+  document.getElementById("song").play();
+}
+
+// sunflower floating
+for (let i = 0; i < 15; i++) {
+  let f = document.createElement("div");
+  f.className = "sunflower";
+  f.innerHTML = "🌻";
+  f.style.left = Math.random() * 100 + "vw";
+  f.style.animationDuration = (Math.random() * 3 + 4) + "s";
+  document.body.appendChild(f);
+}
+</script>
+
+</body>
+</html>
